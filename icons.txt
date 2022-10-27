@@ -3,3 +3,6 @@ Circle
 
 X
 <a href="https://www.flaticon.com/free-icons/ui" title="ui icons">Ui icons created by vinadbumi - Flaticon</a>
+
+Favicon 
+<a href="https://www.flaticon.com/free-icons/tic-tac-toe" title="tic tac toe icons">Tic tac toe icons created by Vectoricons - Flaticon</a>

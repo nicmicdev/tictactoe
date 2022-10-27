@@ -31,7 +31,6 @@ body {
 
 table {
     border-collapse: collapse;
-    position: relative;
 }
 
 tr {
@@ -76,16 +75,54 @@ tr td:last-child {
 }
 
 .d-none {
-    display: none;
+    display: none !important;
 }
 
 .horizontal-line {
     height: 10px;
     background-color: rgba(0, 0, 0, .5);
     width: 300px;
-    position: absolute;    
+    position: absolute;
+    transform: scaleX(0.0);
+    transition: transform 225ms ease-in-out;
+    z-index: 5;
+
 }
 
 .make-vertical {
-    transform: rotate(90deg);
+    transform: rotate(90deg) scaleX(0.0);
+}
+
+.table-lines-container {
+    position: relative;
+}
+
+/* .player-1 {
+    color: purple;
+}
+
+.player-2 {
+    color: turquoise;
+} */
+
+.game-over {
+    z-index: 10;
+    animation: zoomIn 225ms ease-in-out;
+}
+
+.restart-button {
+    border-radius: 10px;
+    background-color: aquamarine;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+
 }
