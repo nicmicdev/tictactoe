@@ -118,7 +118,17 @@ tr td:last-child {
 .restart-button {
     border-radius: 10px;
     background-color: aquamarine;
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    font-size: 32px;
+    margin-top: 32px;
 }
+
+.restart-button:hover {
+    background-color: turquoise;
+}
+
 
 footer {
     display: flex;
@@ -143,6 +153,22 @@ footer a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.game-over-container {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-over-img {
+    height: 350px;
+}
+
+.winner-img {
+    height: 75px;
 }
 
 @keyframes zoomIn {

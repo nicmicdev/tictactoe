@@ -145,21 +145,21 @@ function noWinnerAndFieldsFilled(winner){
 }
 
 function showCircle() {
-    return '<img src="img/circle.png">'
+    return '<img class="winner-img" src="img/circle.png">'
 }
 
 function showX() {
-    return '<img src="img/x.png">'
+    return '<img class="winner-img"src="img/x.png">'
 }
 
 
 function showWinnerAlertAndCircleIcon() {
-    document.getElementById('game-over-text').innerHTML = 'PLAYER 1 WINS'
-    document.getElementById('game-over-container').innerHTML += showCircle();
+    document.getElementById('game-over-text').innerHTML = 'WINNER: PLAYER 1'
+    document.getElementById('winner-img').innerHTML = showCircle();
 }
 
 
 function showWinnerAlertAndXIcon() {
-    document.getElementById('game-over-text').innerHTML = 'PLAYER 2 WINS'
-    document.getElementById('game-over-container').innerHTML += showX();
+    document.getElementById('game-over-text').innerHTML = 'WINNER: PLAYER 2'
+    document.getElementById('winner-img').innerHTML += showX();
 }
