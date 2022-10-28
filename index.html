@@ -11,119 +11,110 @@
 </head>
 
 <body>
-    
+
     <div class="game-over-container d-none" id="game-over-container">
         <img class="game-over-img" id="game-over" src="img/game-over.png" alt="">
         <h3 id="game-over-text">WIN or DRAW</h3>
         <div id="winner-img"></div>
         <a class="restart-button" href="index.html">RESTART</a>
-        
-        <!-- <button class="restart-button" onclick="restart()">RESTART</button> -->
     </div>
 
-    
+
     <div class="game-container" id="game-container">
-        
+
         <div class="player-panel">
-            <div id="player-1" class="player-1" >
+            <div id="player-1" class="player-1">
                 <img id="" src="img/circle.png"> Player 1
             </div>
-    
+
             <div id="player-2" class="player-inactive player-2">
                 <img id="" class="" src="img/x.png" alt=""> Player 2
             </div>
-    
+
         </div>
-    
+
         <div class="table-lines-container">
-            
+
             <div id="line-1" class="horizontal-line" style="top: 61px; left: 61px;"></div>
             <div id="line-2" class="horizontal-line" style="top: 198px; left: 61px;"></div>
             <div id="line-3" class="horizontal-line" style="top: 335px; left: 61px;"></div>
             <div id="line-4" class="horizontal-line make-vertical" style="top: 198px; right: 198px;"></div>
             <div id="line-5" class="horizontal-line make-vertical" style="top: 198px; right: 57px;"></div>
             <div id="line-6" class="horizontal-line make-vertical" style="top: 198px; left: 197px;"></div>
-            <div id="line-7" class="horizontal-line" style="top: 200px; right: 55px ;transform: rotate(45deg) scaleX(0.0); "></div>
-            <div id="line-8" class="horizontal-line" style="top: 200px; left: 54px;transform: rotate(-45deg) scaleX(0.0);"></div>
-    
-    
+            <div id="line-7" class="horizontal-line"
+                style="top: 200px; right: 55px ;transform: rotate(45deg) scaleX(0.0); "></div>
+            <div id="line-8" class="horizontal-line"
+                style="top: 200px; left: 54px;transform: rotate(-45deg) scaleX(0.0);"></div>
+
             <table>
-            
-            
                 <tr>
                     <td onclick="fillShape(0)">
-        
+
                         <img id="circle-0" class="shape d-none" src="img/circle.png">
                         <img id="x-0" class="shape d-none" src="img/x.png" alt="">
                     </td>
-        
+
                     <td onclick="fillShape(1)"><img class="shape d-none" src="img/circle.png">
                         <img id="circle-1" class="shape d-none" src="img/circle.png" alt="">
                         <img id="x-1" class="shape d-none" src="img/x.png" alt="">
-        
+
                     </td>
-        
+
                     <td onclick="fillShape(2)"><img class="shape d-none" src="img/circle.png">
                         <img id="circle-2" class="shape d-none" src="img/circle.png" alt="">
                         <img id="x-2" class="shape d-none" src="img/x.png" alt="">
-        
+
                     </td>
                 </tr>
-        
+
                 <tr>
-        
+
                     <td onclick="fillShape(3)"><img class="shape d-none" src="img/circle.png">
                         <img id="circle-3" class="shape d-none" src="img/circle.png" alt="">
                         <img id="x-3" class="shape d-none" src="img/x.png" alt="">
-        
+
                     </td>
-        
+
                     <td onclick="fillShape(4)"><img class="shape d-none" src="img/circle.png">
                         <img id="circle-4" class="shape d-none" src="img/circle.png" alt="">
                         <img id="x-4" class="shape d-none" src="img/x.png" alt="">
-        
+
                     </td>
-        
+
                     <td onclick="fillShape(5)"><img class="shape d-none" src="img/circle.png">
                         <img id="circle-5" class="shape d-none" src="img/circle.png" alt="">
                         <img id="x-5" class="shape d-none" src="img/x.png" alt="">
-        
+
                     </td>
                 </tr>
-        
+
                 <tr>
-        
+
                     <td onclick="fillShape(6)"><img class="shape d-none" src="img/circle.png">
                         <img id="circle-6" class="shape d-none" src="img/circle.png" alt="">
                         <img id="x-6" class="shape d-none" src="img/x.png" alt="">
-        
+
                     </td>
-        
+
                     <td onclick="fillShape(7)"><img class="shape d-none" src="img/circle.png">
                         <img id="circle-7" class="shape d-none" src="img/circle.png" alt="">
                         <img id="x-7" class="shape d-none" src="img/x.png" alt="">
-        
+
                     </td>
-        
+
                     <td onclick="fillShape(8)"><img class="shape d-none" src="img/circle.png">
                         <img id="circle-8" class="shape d-none" src="img/circle.png" alt="">
                         <img id="x-8" class="shape d-none" src="img/x.png" alt="">
-        
+
                     </td>
                 </tr>
             </table>
-        
         </div>
-    
     </div>
 
     <footer>
         <a href="imprint.html" target="_blank">Imprint</a>
     </footer>
-    
-
-
-
 
     <script src="script.js"></script>
 </body>

@@ -3,6 +3,7 @@
 let fields = [];
 let gameOver = false;
 let currentShape = 'x';
+let winner;
 
 //MAIN FUNCTIONALITY
 function fillShape(id) {
@@ -10,46 +11,24 @@ function fillShape(id) {
         if (currentShape == 'x') {
             currentShape = 'circle';
             document.getElementById('player-1').classList.add('player-inactive');
-            //document.getElementById('player-1').classList.add('d-none');
             document.getElementById('player-2').classList.remove('player-inactive');
-            //document.getElementById('player-2').classList.remove('d-none');
         } else {
             currentShape = 'x'
             document.getElementById('player-1').classList.remove('player-inactive');
-            //document.getElementById('player-1').classList.remove('d-none');
             document.getElementById('player-2').classList.add('player-inactive');
-            //document.getElementById('player-2').classList.add('d-none');
         }
-
         fields[id] = currentShape;
-        console.log(fields);
         draw();
         checkForWin();
     }
-
 }
 
-
-// function restart() {
-//     gameOver = false;
-//     fields = [];
-//     document.getElementById('game-over-container').classList.add('d-none');
-//     document.getElementById('game-container').classList.remove('d-none');
-//     for (let i = 1; i < 8; i++) {
-//         document.getElementById('line-'+ i).classList.add('d-none');
-//     }
-//     for (let i = 0; i < 9; i++) {
-//         document.getElementById('circle-' + i).classList.add('d-none');        
-//         document.getElementById('x-' + i).classList.add('d-none');        
-//     }
-// }
 
 function draw() {
     for (let i = 0; i < fields.length; i++) {
         if (fields[i] == 'circle') {
             document.getElementById('circle-' + i).classList.remove('d-none');
         }
-
         if (fields[i] == 'x') {
             document.getElementById('x-' + i).classList.remove('d-none');
         }
@@ -57,21 +36,65 @@ function draw() {
 }
 
 
-function checkifNoWinner(winner){
-    if(noWinnerAndFieldsFilled(winner)) {
+function checkifNoWinner(winner) {
+    if (noWinnerAndFieldsFilled(winner)) {
         gameOver == true;
-        console.log ('Draw');
         document.getElementById('game-over-text').innerHTML = 'IT´S A DRAW'
-        setTimeout(function() {
+        setTimeout(function () {
             document.getElementById('game-over-container').classList.remove('d-none');
             document.getElementById('game-container').classList.add('d-none');
         }, 1250)
     }
 }
 
-function checkForWin() {
-    let winner;
 
+function checkForWin() {
+    winConditionsAndDrawLine();
+    if (winner) {
+        gameOver = true;
+        if (currentShape == 'circle') {
+            showWinnerAlertAndCircleIcon();
+        } else {
+            showWinnerAlertAndXIcon();
+        }
+        setTimeout(function () {
+            document.getElementById('game-over-container').classList.remove('d-none');
+            document.getElementById('game-container').classList.add('d-none');
+        }, 1250)
+    }
+    checkifNoWinner(winner);
+}
+
+
+// HELP FUNCTIONS
+function noWinnerAndFieldsFilled(winner) {
+    return fields[0] && fields[1] && fields[2] && fields[3] && fields[4] && fields[5] && fields[6] && fields[7] && fields[8] && !winner;
+}
+
+
+function showCircle() {
+    return '<img class="winner-img" src="img/circle.png">';
+}
+
+
+function showX() {
+    return '<img class="winner-img"src="img/x.png">';
+}
+
+
+function showWinnerAlertAndCircleIcon() {
+    document.getElementById('game-over-text').innerHTML = 'WINNER: PLAYER 1'
+    document.getElementById('winner-img').innerHTML = showCircle();
+}
+
+
+function showWinnerAlertAndXIcon() {
+    document.getElementById('game-over-text').innerHTML = 'WINNER: PLAYER 2'
+    document.getElementById('winner-img').innerHTML += showX();
+}
+
+
+function winConditionsAndDrawLine() {
     // row 1
     if (fields[0] == fields[1] && fields[1] == fields[2] && fields[0]) {
         winner = fields[0];
@@ -119,47 +142,4 @@ function checkForWin() {
         document.getElementById('line-8').style.transform = 'rotate(-45deg)scaleX(1.2)';
 
     }
-
-    if (winner) {
-        console.log('Gewonnen hat: ' + winner);
-        gameOver = true;
-        if(currentShape == 'circle'){
-            showWinnerAlertAndCircleIcon();
-        } else {
-            showWinnerAlertAndXIcon();
-        }
-        setTimeout(function() {
-            document.getElementById('game-over-container').classList.remove('d-none');
-            document.getElementById('game-container').classList.add('d-none');
-        }, 1250) 
-    }
-
-    checkifNoWinner(winner);
-
-}
-
-// HELP FUNCTIONS
-
-function noWinnerAndFieldsFilled(winner){
-    return fields[0] && fields[1] && fields[2]&& fields[3] && fields[4] && fields[5] && fields[6] && fields[7] &&  fields[8] && !winner;
-}
-
-function showCircle() {
-    return '<img class="winner-img" src="img/circle.png">'
-}
-
-function showX() {
-    return '<img class="winner-img"src="img/x.png">'
-}
-
-
-function showWinnerAlertAndCircleIcon() {
-    document.getElementById('game-over-text').innerHTML = 'WINNER: PLAYER 1'
-    document.getElementById('winner-img').innerHTML = showCircle();
-}
-
-
-function showWinnerAlertAndXIcon() {
-    document.getElementById('game-over-text').innerHTML = 'WINNER: PLAYER 2'
-    document.getElementById('winner-img').innerHTML += showX();
 }
