@@ -123,6 +123,9 @@ tr td:last-child {
     padding: 5px;
     font-size: 32px;
     margin-top: 32px;
+    font-family:'Courier New', Courier, monospace;
+    cursor: pointer;
+    border: none;
 }
 
 .restart-button:hover {
