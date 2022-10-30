@@ -56,6 +56,7 @@ function restart() {
     gameOver = false;
     fields = [];
     winner = undefined;
+    getElement('winner-img').innerHTML = "";
     showGameScreen();
     for (let i = 1; i < 9; i++) {
         getElement('line-'+ i).style.transform = 'scaleX(0)';

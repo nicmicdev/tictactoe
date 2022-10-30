@@ -1,0 +1,67 @@
+@media (max-width:420px) {
+    .player-panel {
+        font-size: 17px;
+        margin-bottom: 50px;
+    }
+
+    .player-panel img {
+        height: 35px;
+        width: 35px;
+    }
+
+    table {
+        table-layout: auto;
+        width: 290px;
+    }
+
+    td:hover{
+        background-color: unset;
+        opacity: 1;
+    }
+
+    .shape {
+        top: 30px;
+        height: 70px;
+        width: 70px;
+        left: 12px;
+    }
+
+    .game-over-img {
+        height: 250px;
+    }
+
+    /* MOBILE LINES */
+
+    .mobile-line-1 {
+        left: -2px !important;
+    }
+
+    .mobile-line-2 {
+        left: -2px !important;
+    }
+    
+    .mobile-line-3 {
+        left: -2px !important;
+    }
+
+    .mobile-line-4 {
+        right: 94px !important;
+    }
+
+    .mobile-line-5 {
+        left: -2px !important;
+    }
+
+    .mobile-line-6 {
+        left: 94px !important;
+    }
+
+    .mobile-line-7 {
+        left: -12px !important;
+        /* transform: rotate(54deg) scale(0) !important; */
+    }
+
+    .mobile-line-8 {
+        left: -2px !important;
+    }    
+}
